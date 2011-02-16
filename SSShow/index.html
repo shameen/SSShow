@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>SSShow example</title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+  <script type="text/javascript" src="ssshow.js"></script>
+  <script type="text/javascript">
+    function SSShow_doExample() {
+        var SSS1 = {};
+        
+        //Array of images with source, width and height (in pixels)
+        SSS1.imgs = [];
+        SSS1.imgs[0] = ["images/img001.jpg", 400, 299];
+        SSS1.imgs[1]=["images/img002.jpg", 328, 420];
+        SSS1.imgs[2]=["images/img003.jpg", 275, 208];
+        
+        //Margin of images and delay between them
+        SSS1.margin = 5;
+        SSS1.delay = 3000;
+        
+        //Start the slideshow
+        SSShow_start('#SShowID',SSS1);
+    }
+  </script>
+</head>
+<body style="background-color:#eee;font-family:sans-serif">
+    <!--introduction box -->
+    <div style="width:800px;margin:auto;padding:10px 20px;background-color:#ddd;border:solid 5px #e8e8e8">
+        <h1 style="text-align:center;text-shadow:#eee 0 1px">SSShow Example page</h1>
+        Shameen's SlideShow (SSShow) is a JavaScript/jQuery-powered slideshow.
+        It resizes images to fit its container, and makes them center-aligned.
+        There's a simple fade effect to show and hide each image.
+        <hr />The following code sets up the SShow example:
+        <pre style="background-color:#eee;padding:5px;margin:5px;overflow:auto;"><code>
+&lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="ssshow.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+    function SSShow_doExample() {
+    var SSS1 = {};
+    
+    //Array of images with source, width and height (in pixels)
+    SSS1.imgs = [];
+    SSS1.imgs[0] = ["images/img001.jpg", 400, 299];
+    SSS1.imgs[1]=["images/img002.jpg", 328, 420];
+    SSS1.imgs[2]=["images/img003.jpg", 275, 208];
+    
+    //Margin of images and delay between them
+    SSS1.margin = 5;
+    SSS1.delay = 3000;
+    
+    //Start the slideshow
+    SSShow_start('#SShowID',SSS1);
+}
+&lt;/script&gt;</pre></code>
+        <button onclick="javascript:SSShow_doExample();">Run the example code</button><br />
+    </div>
+    
+    <!-- the slideshow (style is to make it look nicer) -->
+    <div id="SShowID" style="margin:20px auto;padding:5px;background-color:#888;width:400px;height:400px;-webkit-box-shadow:inset 0 0 5px #000;-moz-box-shadow:inset 0 0 5px #000;box-shadow:inset 0 0 5px #000;">
+    </div>
+    
+    <!--explanation box-->
+    <div style="width:800px;margin:auto;padding:10px 20px;background-color:#ddd;border:solid 5px #e8e8e8">
+        Let's go through this code step-by-step.
+        <ol>
+            <li><b>var SSS1 = {};</b>
+                <ul>
+                    <li>This creates an object that will keep the properties that we define.</li>
+                    <li>It doesn't really matter what you call it.</li>
+                </ul>
+            </li>
+            <li><b>imgs = [];</b>
+                <ul>
+                    <li>This is an array that stores the data on the images you want to be displayed.</li>
+                    <li>The slideshow will start at <b>[0]</b> and loop through the rest.</li>
+                    <li>Each item is also an array, storing the <i>source URL</i>, <i>width</i>, and <i>height</i>.</li>
+                    <li>Image dimensions must be specified</li>
+                </ul>
+            </li>
+            <li><b>margin and delay</b>
+                <ul>
+                    <li><i>margin</i> is the minimum gap between the image and its container.</li>
+                    <li><i>delay</i> is the time in milliseconds to wait before showing the next image.</li>
+                </ul>
+            </li>
+            <li><b>SSShow_start('#SShowID',SSS1);</b>
+                <ul>
+                    <li>This will begin the slideshow.</li>
+                    <li>The first parameter is the target/container for the slideshow (in this case, id="SShowID"),
+                    and SSS1 is the object we just made.</li>
+                </ul>
+            </li>
+        </ul>
+        <hr />
+        Hopefully this will work with multiple instances, but I have yet to test it out. 
+    </div>
+    <div style="text-align:center"><a href="http://shameen.info">http://shameen.info</a></div>
+</body>
+</html>
