@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>SSShow example</title>
+  
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+  <script type="text/javascript" src="ssshow.js"></script>
+  <script type="text/javascript">
+    function SSShow_do1() {
+        var sss = {};
+        
+        //Array of images with source, width and height (in pixels)
+        sss.imgs = [];
+        sss.imgs[0] = ["images/img001.jpg", 400, 299];
+        sss.imgs[1]=["images/img002.jpg", 328, 420];
+        sss.imgs[2]=["images/img003.jpg", 275, 208];
+        
+        //Margin of images and delay between them
+        sss.margin = 5;
+        sss.delay = 3000;
+        
+        //Start the slideshow
+        SSShow_start('#slideshow1',sss);
+    }
+    function SSShow_do2() {
+        var sss = {};
+        
+        //Array of images with source, width and height (in pixels)
+        sss.imgs = [];
+        sss.imgs[0] = ["images/img003.jpg", 275, 208];
+        sss.imgs[1]=["images/img002.jpg", 328, 420];
+        sss.imgs[2]=["images/img001.jpg", 400, 299];
+        
+        //Margin of images and delay between them
+        sss.margin = 5;
+        sss.delay = 1500;
+        
+        //Start the slideshow
+        SSShow_start('#slideshow2',sss);
+    }
+  </script>
+  
+</head>
+<body style="background-color:#eee;font-family:sans-serif">
+    <!--introduction box -->
+    <div style="width:800px;margin:auto;padding:10px 20px;background-color:#ddd;border:solid 5px #e8e8e8">
+        <h1>SSShow Multiple instances example</h1>
+        <p>SSShow_do2() shows the image in reverse order and for twice as fast.<br />
+        try it out then look at the source code.</p>
+        <button id="button1" onclick="javascript:SSShow_do1();">SSShow_do1();</button><br />
+        <button id="button2" onclick="javascript:SSShow_do2();">SSShow_do2();</button><br />
+    </div>
+    
+    <!-- the slideshow (style is to make it look nicer) -->
+    <div id="slideshow1" style="float:left;margin:20px;padding:5px;background-color:#888;width:45%;height:320px;-webkit-box-shadow:inset 0 0 5px #000;-moz-box-shadow:inset 0 0 5px #000;box-shadow:inset 0 0 5px #000;">
+    </div>
+    <div id="slideshow2" style="float:right;margin:20px;padding:5px;background-color:#888;width:45%;height:320px;-webkit-box-shadow:inset 0 0 5px #000;-moz-box-shadow:inset 0 0 5px #000;box-shadow:inset 0 0 5px #000;">
+    </div>
+    
+</body>
+</html>
