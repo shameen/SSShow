@@ -1,4 +1,13 @@
-This place is for small programs and stuff that doesn't need a repo of its own.
+Shameen's JavaScript/jQuery SlideShow (SSShow)
+github.com/shameen/shameen.info
 
-There's a lot of stuff on my website which isn't yet available here:
-http://shameen.info/downloads
+Copyright 2011 Shameen Azeez
+Licensed under the GPL v3 
+http://www.gnu.org/licenses/gpl.html 
+
+Shameen's SlideShow (SSShow) is a JavaScript/jQuery-powered slideshow, first made 6th February 2011.
+It resizes images to fit its container, and makes them center-aligned.
+There's a simple fade effect to show and hide each image.
+
+ssshow.js has most of the code,
+and index.html shows an example of how to use it.
