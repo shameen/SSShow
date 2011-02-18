@@ -73,7 +73,6 @@ function SSShow_next(id) {
 
             //Finish up by showing image and resetting timer
             SSSimg.fadeIn('fast');
-            console.log('next image shown!');
 
             SSShow_timers[id] = setTimeout(function(){SSShow_next(id);},SSShow[id].delay);
 
