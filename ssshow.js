@@ -98,4 +98,5 @@ function SSShow_start(target, obj) {
     var id = SSShow.length-1;
     SSShow_is_enabled = true;
     SSShow_timers[id] = setTimeout(function(){SSShow_next(id);}, 0);
+    return id;
 }
