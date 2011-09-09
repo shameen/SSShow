@@ -6,21 +6,18 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
   <script type="text/javascript" src="ssshow.js"></script>
   <script type="text/javascript">
-    function SSShow_doExample() {
-        var SSS1 = {};
-        
+    function SSShow_doExample() {        
         //Array of images with source, width and height (in pixels)
-        SSS1.imgs = [];
-        SSS1.imgs[0] = ["images/img001.jpg", 400, 299];
-        SSS1.imgs[1]=["images/img002.jpg", 328, 420];
-        SSS1.imgs[2]=["images/img003.jpg", 275, 208];
+        var imgs = [];
+        imgs[0] = ["images/img001.jpg", 400, 299];
+        imgs[1]=["images/img002.jpg", 328, 420];
+        imgs[2]=["images/img003.jpg", 275, 208];
         
-        //Margin of images and delay between them
-        SSS1.margin = 5;
-        SSS1.delay = 3000;
+        var delay = 3000;
+        var margin = 5;
         
         //Start the slideshow
-        SSShow_start('#SShowID',SSS1);
+        SSShow_start('#SShowID',imgs,delay,margin);
     }
   </script>
 </head>
@@ -37,22 +34,19 @@
 &lt;script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="ssshow.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript"&gt;
-    function SSShow_doExample() {
-    var SSS1 = {};
-    
+function SSShow_doExample() <b>{</b>
     //Array of images with source, width and height (in pixels)
-    SSS1.imgs = [];
-    SSS1.imgs[0] = ["images/img001.jpg", 400, 299];
-    SSS1.imgs[1]=["images/img002.jpg", 328, 420];
-    SSS1.imgs[2]=["images/img003.jpg", 275, 208];
+    var imgs = [];
+    imgs[0] = ["images/img001.jpg", 400, 299];
+    imgs[1]=["images/img002.jpg", 328, 420];
+    imgs[2]=["images/img003.jpg", 275, 208];
     
-    //Margin of images and delay between them
-    SSS1.margin = 5;
-    SSS1.delay = 3000;
+    var delay = 3000;
+    var margin = 5;
     
     //Start the slideshow
-    SSShow_start('#SShowID',SSS1);
-}
+    SSShow_start('#SShowID',imgs,delay,margin);
+<b>}</b>
 &lt;/script&gt;</code></pre>
         <button onclick="SSShow_doExample();">Run the example code</button><br />
     </div>
@@ -93,8 +87,6 @@
                 </ul>
             </li>
         </ol>
-        <hr />
-        Hopefully this will work with multiple instances, but I have yet to test it out. 
     </div>
     <div style="text-align:center"><a href="http://shameen.info">http://shameen.info</a></div>
 </body>

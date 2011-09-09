@@ -8,36 +8,32 @@
   <script type="text/javascript" src="ssshow.js"></script>
   <script type="text/javascript">
     function SSShow_do1() {
-        var sss = {};
-        
         //Array of images with source, width and height (in pixels)
-        sss.imgs = [];
-        sss.imgs[0] = ["images/img001.jpg", 400, 299];
-        sss.imgs[1]=["images/img002.jpg", 328, 420];
-        sss.imgs[2]=["images/img003.jpg", 275, 208];
+        var imgs = [];
+        imgs[0] = ["images/img001.jpg", 400, 299];
+        imgs[1]=["images/img002.jpg", 328, 420];
+        imgs[2]=["images/img003.jpg", 275, 208];
         
         //Margin of images and delay between them
-        sss.margin = 5;
-        sss.delay = 3000;
+        var delay = 3000;
+        var margin = 5;
         
         //Start the slideshow
-        SSShow_start('#slideshow1',sss);
+        SSShow_start('#slideshow1',imgs,delay,margin);
     }
     function SSShow_do2() {
-        var sss = {};
-        
         //Array of images with source, width and height (in pixels)
-        sss.imgs = [];
-        sss.imgs[0] = ["images/img003.jpg", 275, 208];
-        sss.imgs[1]=["images/img002.jpg", 328, 420];
-        sss.imgs[2]=["images/img001.jpg", 400, 299];
+        var imgs = [];
+        imgs[0] = ["images/img003.jpg", 275, 208];
+        imgs[1]=["images/img002.jpg", 328, 420];
+        imgs[2]=["images/img001.jpg", 400, 299];
         
         //Margin of images and delay between them
-        sss.margin = 5;
-        sss.delay = 1500;
+        var margin = 5;
+        var delay = 1500;
         
         //Start the slideshow
-        SSShow_start('#slideshow2',sss);
+        SSShow_start('#slideshow2',imgs,delay,margin);
     }
   </script>
   

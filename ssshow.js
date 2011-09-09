@@ -10,20 +10,23 @@ var SSShow = [];
 var SSShow_is_enabled = false;
 var SSShow_timers = [];
 
-function SSShow_newInstance(target, obj) {
-    //Make an object with all properties
+function SSShow_newInstance(target, imgs, delay, margin) {
+    /* Make an instance of SSShow using the arguments given.
+     */
     var O = {};
     O.target = target;
     O.height = $(target).height();
     O.width = $(target).width();
     O.cur = -1;
-    O.margin = obj.margin;
-    O.delay = obj.delay;
-    O.imgs = obj.imgs;
+    O.margin = margin;
+    O.delay = delay;
+    O.imgs = imgs;
     return O;
 }
 
 function SSShow_next(id) {
+    /* Changes to the next image in the slideshow, then sets the timer for the next image.
+     */
     if (SSShow_is_enabled) {
         //Set the new current image
         
@@ -81,8 +84,9 @@ function SSShow_next(id) {
 }
 
 function SSShow_prev(id) {
-    //Set cur so the next time SSShow_next is called,
-    //it will show the previous image.
+    /* Set the index 'cur' so the next time SSShow_next is called,
+     * it will show the previous image.
+     */
     SSShow[id].cur -= 2;
     if (SSShow[id].cur <= -2) {
         SSShow[id].cur = SSShow[id].imgs.length-2;
@@ -90,11 +94,22 @@ function SSShow_prev(id) {
     SSShow_timers[id] = setTimeout(function(){SSShow_next(id);},SSShow[id].delay);
 }
 
-function SSShow_start(target, obj) {
+function SSShow_start(target, imgs, delay, margin) {
+    /* Makes a new instance of SSShow and starts the slideshow.
+     * This is the only function you need to run (via a webpage) for basic usage.
+     * 
+     *      target = the object/identifier of the slideshow's container. (jQuery)
+     *      imgs = An array of images and their dimensions: [source,width,height]
+     *      delay = The time (in milliseconds) the image is shown for. (optional)
+     *      margin = The minimum space (in pixels) between the image and it's container.
+     */
     $(target).html('<img src="loading.gif" width="16" height="16" alt="loading..." />');
-
-    //Make a new instance of SSShow and start it off
-    SSShow.push(SSShow_newInstance(target, obj));
+    
+    //To set defaults on optional variables
+    delay = (typeof delay == 'undefined') ? 5000 : delay;
+    margin = (typeof margin== 'undefined') ? 5 : margin;
+     
+    SSShow.push(SSShow_newInstance(target, imgs, delay, margin));
     var id = SSShow.length-1;
     SSShow_is_enabled = true;
     SSShow_timers[id] = setTimeout(function(){SSShow_next(id);}, 0);
