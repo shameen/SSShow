@@ -59,12 +59,6 @@ function SSShow_doExample() <b>{</b>
     <div style="width:800px;margin:auto;padding:10px 20px;background-color:#ddd;border:solid 5px #e8e8e8">
         Let's go through this code step-by-step.
         <ol>
-            <li><b>var SSS1 = {};</b>
-                <ul>
-                    <li>This creates an object that will keep the properties that we define.</li>
-                    <li>It doesn't really matter what you call it.</li>
-                </ul>
-            </li>
             <li><b>imgs = [];</b>
                 <ul>
                     <li>This is an array that stores the data on the images you want to be displayed.</li>
@@ -73,17 +67,17 @@ function SSShow_doExample() <b>{</b>
                     <li>Image dimensions must be specified</li>
                 </ul>
             </li>
-            <li><b>margin and delay</b>
+            <li><b>delay and margin</b>
                 <ul>
-                    <li><i>margin</i> is the minimum gap between the image and its container.</li>
                     <li><i>delay</i> is the time in milliseconds to wait before showing the next image.</li>
+                    <li><i>margin</i> is the minimum gap between the image and its container.</li>
                 </ul>
             </li>
-            <li><b>SSShow_start('#SShowID',SSS1);</b>
+            <li><b>SSShow_start('#SShowID',imgs,delay,margin);</b>
                 <ul>
                     <li>This will begin the slideshow.</li>
                     <li>The first parameter is the target/container for the slideshow (in this case, id="SShowID"),
-                    and SSS1 is the object we just made.</li>
+                    and the following variables are the three we just made.</li>
                 </ul>
             </li>
         </ol>
